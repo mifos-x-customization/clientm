@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.InputType;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -559,6 +560,7 @@ public class GenerateCollectionSheetFragment extends MifosBaseFragment
 
     private void inflateProductiveCollectionTable(CollectionSheetResponse collectionSheetResponse) {
 
+
         //Clear old views in case they are present.
         if (tableProductive.getChildCount() > 0) {
             tableProductive.removeAllViews();
@@ -636,7 +638,7 @@ public class GenerateCollectionSheetFragment extends MifosBaseFragment
                         EditText editText = new EditText(getContext());
                         editText.setInputType(InputType.TYPE_CLASS_NUMBER |
                                 InputType.TYPE_NUMBER_FLAG_DECIMAL);
-                        editText.setText(String.format(Locale.getDefault(), "%f", 0.0));
+                        editText.setText(String.format(Locale.getDefault(), "%f", loanCollectionSheet.getTotalDue()));
                         //Set the loan id as the Tag of the EditText which
                         //will later be used as the identifier for this.
                         editText.setTag(TYPE_LOAN + ":" + loanCollectionSheet.getLoanId());

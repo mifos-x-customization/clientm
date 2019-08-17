@@ -24,7 +24,7 @@ public class MeetingFallCalendar implements Parcelable {
 
     private int id;
 
-    private int installmentDue;
+    private double installmentDue;
 
     private String name;
 
@@ -36,11 +36,11 @@ public class MeetingFallCalendar implements Parcelable {
 
     private Status status;
 
-    private int totalCollected;
+    private double totalCollected;
 
-    private int totalOverdue;
+    private double totalOverdue;
 
-    private int totaldue;
+    private double totaldue;
 
     public String getAccountNo() {
         return accountNo;
@@ -90,11 +90,11 @@ public class MeetingFallCalendar implements Parcelable {
         this.id = id;
     }
 
-    public int getInstallmentDue() {
+    public double getInstallmentDue() {
         return installmentDue;
     }
 
-    public void setInstallmentDue(int installmentDue) {
+    public void setInstallmentDue(double installmentDue) {
         this.installmentDue = installmentDue;
     }
 
@@ -138,27 +138,27 @@ public class MeetingFallCalendar implements Parcelable {
         this.status = status;
     }
 
-    public int getTotalCollected() {
+    public double getTotalCollected() {
         return totalCollected;
     }
 
-    public void setTotalCollected(int totalCollected) {
+    public void setTotalCollected(double totalCollected) {
         this.totalCollected = totalCollected;
     }
 
-    public int getTotalOverdue() {
+    public double getTotalOverdue() {
         return totalOverdue;
     }
 
-    public void setTotalOverdue(int totalOverdue) {
+    public void setTotalOverdue(double totalOverdue) {
         this.totalOverdue = totalOverdue;
     }
 
-    public int getTotaldue() {
+    public double getTotaldue() {
         return totaldue;
     }
 
-    public void setTotaldue(int totaldue) {
+    public void setTotaldue(double totaldue) {
         this.totaldue = totaldue;
     }
 
@@ -176,15 +176,15 @@ public class MeetingFallCalendar implements Parcelable {
         dest.writeParcelable(this.collectionMeetingCalendar, flags);
         dest.writeString(this.hierarchy);
         dest.writeInt(this.id);
-        dest.writeInt(this.installmentDue);
+        dest.writeDouble(this.installmentDue);
         dest.writeString(this.name);
         dest.writeInt(this.officeId);
         dest.writeInt(this.staffId);
         dest.writeString(this.staffName);
         dest.writeParcelable(this.status, flags);
-        dest.writeInt(this.totalCollected);
-        dest.writeInt(this.totalOverdue);
-        dest.writeInt(this.totaldue);
+        dest.writeDouble(this.totalCollected);
+        dest.writeDouble(this.totalOverdue);
+        dest.writeDouble(this.totaldue);
     }
 
     public MeetingFallCalendar() {

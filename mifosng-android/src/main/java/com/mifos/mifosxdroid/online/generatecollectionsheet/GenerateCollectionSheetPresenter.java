@@ -2,6 +2,7 @@ package com.mifos.mifosxdroid.online.generatecollectionsheet;
 
 import android.content.Context;
 
+import android.util.Log;
 import com.mifos.api.DataManager;
 import com.mifos.api.GenericResponse;
 import com.mifos.api.datamanager.DataManagerCollectionSheet;
@@ -28,6 +29,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import io.fabric.sdk.android.Logger;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -218,6 +220,7 @@ public class GenerateCollectionSheetPresenter
                     public void onError(Throwable e) {
                         getMvpView().showProgressbar(false);
                         getMvpView().showError(MFErrorParser.errorMessage(e));
+
                     }
 
                     @Override
